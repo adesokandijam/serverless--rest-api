@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     ExpressionAttributeValues={
         ":value": {'S': 'Mech'}
     },
-    ReturnValues: "UPDATED_NEW"
+    ReturnValues= "UPDATED_NEW"
   )
 
   response = {
