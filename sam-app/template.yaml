@@ -52,6 +52,25 @@ Resources:
           Properties:
             Path: /get/{id}
             Method: get
+  UpdateFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: school-api/
+      Handler: update.lambda_handler
+      Runtime: python3.8
+      Architectures:
+        - x86_64
+      Policies:
+       - AmazonDynamoDBFullAccess
+      Environment:
+        Variables: 
+         TABLE_NAME: !Select [1, !Split ['/', !GetAtt TestTable.Arn]] 
+      Events:
+        HelloWorld:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /update/{id}
+            Method: patch        
   ScanFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -69,7 +88,7 @@ Resources:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /getall
+            Path: /get
             Method: get
   TestTable:
     Type: AWS::Serverless::SimpleTable
