@@ -18,4 +18,4 @@ def lambda_handler(event, context):
       },
   }
   
-  return {response['Items']}
+  return response
