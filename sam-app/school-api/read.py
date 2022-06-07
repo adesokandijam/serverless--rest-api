@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     TableName=table_name,
     Key={
         'id': {
-          'N': event['queryStringParameters']['id']
+          'N': event['pathParameters']['id']
         }
     }
   )
