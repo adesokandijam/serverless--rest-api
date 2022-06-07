@@ -33,10 +33,6 @@ def lambda_handler(event, context):
             'year_of_grad': {
                 'S': event['queryStringParameters']['grad_year'] 
             }
-        },
-        ConditionExpression: "attribute_not_exist(#ID)",
-        ExpressionAttributeName={
-            "ID": 'id'
         }
     )
     
