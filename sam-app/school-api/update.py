@@ -13,7 +13,7 @@ def lambda_handler(event, context):
         }
     },
     UpdateExpression="set %s = :value" % 'department'
-    ExpressionAttributeName={
+    ExpressionAttributeValues={
         ":value": event["queryStringParamters"]["department"]
     }
   )
@@ -26,5 +26,5 @@ def lambda_handler(event, context):
         'Access-Control-Allow-Origin': '*'
       },
   }
-  
+    
   return response

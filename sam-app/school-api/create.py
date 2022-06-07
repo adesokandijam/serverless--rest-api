@@ -45,4 +45,4 @@ def lambda_handler(event, context):
       },
     }
 
-    return response['body']
+    return response
