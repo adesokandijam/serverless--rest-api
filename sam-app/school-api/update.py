@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     },
     UpdateExpression="set department = :value'
     ExpressionAttributeValues={
-        ":value": {'S',event["queryStringParamters"]["department"][0]}
+        ":value": {'S','Mech'}
     },
     "ReturnValues": "UPDATED_NEW"
   )
