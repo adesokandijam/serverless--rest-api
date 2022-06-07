@@ -12,10 +12,11 @@ def lambda_handler(event, context):
           'N': event['pathParameters']['id']
         }
     },
-    UpdateExpression="set %s = :value" % 'department'
+    UpdateExpression="set department = :value'
     ExpressionAttributeValues={
-        ":value": event["queryStringParamters"]["department"]
-    }
+        ":value": {'S',event["queryStringParamters"]["department"]}
+    },
+    "ReturnValues": "UPDATED_NEW"
   )
 
   response = {
