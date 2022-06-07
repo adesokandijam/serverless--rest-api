@@ -23,4 +23,4 @@ def lambda_handler(event, context):
       },
   }
   
-  return json.dumps(response['Items'])
+  return response
