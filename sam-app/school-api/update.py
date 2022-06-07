@@ -12,7 +12,7 @@ def lambda_handler(event, context):
           'N': event['pathParameters']['id']
         }
     },
-    UpdateExpression="set department = :value'
+    UpdateExpression="set department = :value",
     ExpressionAttributeValues={
         ":value": 'Mech'
     },
