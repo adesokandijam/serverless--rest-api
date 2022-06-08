@@ -18,6 +18,9 @@ Also create a role for the deployment of the CloudFormation Template which the S
 
 
 ## Making use of the API
-* **Adding a new student** - <API-ENDPOINT>/add?id=3&name=Dijam&matric_no=200&department=Social+Sciences&faculty=Technology&CGPA=3.99&grad_year=2002
-* **Getting a student information** - <API-ENDPOINT>/get/3
+* **Adding a new student** - API-ENDPOINT/add?id=3&name=Dijam&matric_no=200&department=Social+Sciences&faculty=Technology&CGPA=3.99&grad_year=2002
+* **Getting a student information** - API-ENDPOINT/get/3
+* **Getting all students information** - API-ENDPOINT/get/
+* **Updating a student department** - API-ENDPOINT/update/3/?department=Medicine
+* **Deleting a student information** - API-ENDPOINT/delete/3
 ## CI/CD pipeline
