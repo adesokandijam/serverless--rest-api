@@ -9,12 +9,12 @@ table_name = os.environ['TABLE_NAME']
 client = boto3.client('dynamodb')
 
 def lambda_handler(event, context):
-    
+    try: 
         data = client.put_item(
             TableName = table_name,
             Item={
                 'id': {
-                '   N': event['queryStringParameters']['id'] 
+                'N': event['queryStringParameters']['id'] 
                 },
                 "name": {
                     'S': event['queryStringParameters']['name'] 
@@ -46,5 +46,8 @@ def lambda_handler(event, context):
         },
         }
 
-    
+    except ClientError as e:
+        logger.error(e.response['Error']['Message'])
+        raise
+    else:
         return response
