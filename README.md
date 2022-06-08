@@ -16,4 +16,8 @@ Also create a role for the deployment of the CloudFormation Template which the S
 * **PROD_CLOUDFORMATION_EXECUTION_ROLE** - ARN of the created cloudformation role
 * **PROD_ARTIFACTS_BUCKET** - name of production bucket.
 
+
+## Making use of the API
+* **Adding a new student** - <API-ENDPOINT>/add?id=3&name=Dijam&matric_no=200&department=Social+Sciences&faculty=Technology&CGPA=3.99&grad_year=2002
+* **Getting a student information** - <API-ENDPOINT>/get/3
 ## CI/CD pipeline
