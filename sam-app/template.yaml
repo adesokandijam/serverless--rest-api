@@ -23,7 +23,13 @@ Resources:
       Architectures:
         - x86_64
       Policies:
-       - AmazonDynamoDBFullAccess
+      - Statement:
+        - Sid: DynamoDBPolicy
+          Effect: Allow
+          Action:
+            - dynamodb:PutItem
+          Resource:
+            - !GetAtt TestTable.Arn
       Environment:
         Variables: 
          TABLE_NAME: !Select [1, !Split ['/', !GetAtt TestTable.Arn]] 
@@ -42,7 +48,13 @@ Resources:
       Architectures:
         - x86_64
       Policies:
-       - AmazonDynamoDBFullAccess
+      - Statement:
+        - Sid: DynamoDBPolicy
+          Effect: Allow
+          Action:
+            - dynamodb:GetItem
+          Resource:
+            - !GetAtt TestTable.Arn
       Environment:
         Variables: 
          TABLE_NAME: !Select [1, !Split ['/', !GetAtt TestTable.Arn]] 
@@ -61,7 +73,13 @@ Resources:
       Architectures:
         - x86_64
       Policies:
-       - AmazonDynamoDBFullAccess
+      - Statement:
+        - Sid: DynamoDBPolicy
+          Effect: Allow
+          Action:
+            - dynamodb:DeleteItem
+          Resource:
+            - !GetAtt TestTable.Arn
       Environment:
         Variables: 
          TABLE_NAME: !Select [1, !Split ['/', !GetAtt TestTable.Arn]] 
@@ -80,7 +98,13 @@ Resources:
       Architectures:
         - x86_64
       Policies:
-       - AmazonDynamoDBFullAccess
+      - Statement:
+        - Sid: DynamoDBPolicy
+          Effect: Allow
+          Action:
+            - dynamodb:UpdateItem
+          Resource:
+            - !GetAtt TestTable.Arn
       Environment:
         Variables: 
          TABLE_NAME: !Select [1, !Split ['/', !GetAtt TestTable.Arn]] 
@@ -99,7 +123,13 @@ Resources:
       Architectures:
         - x86_64
       Policies:
-       - AmazonDynamoDBFullAccess
+      - Statement:
+        - Sid: DynamoDBPolicy
+          Effect: Allow
+          Action:
+            - dynamodb:Scan
+          Resource:
+            - !GetAtt TestTable.Arn
       Environment:
         Variables: 
          TABLE_NAME: !Select [1, !Split ['/', !GetAtt TestTable.Arn]] 
