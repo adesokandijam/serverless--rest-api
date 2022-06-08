@@ -7,13 +7,13 @@ Create two S3 buckets to store the build artifacts as well as roles which the pi
 Ensure the AWS user has the correct permission to be able to assume the pipeline role
 Also create a role for the deployment of the CloudFormation Template which the SAM user will use.
 
-**AWS_ACCESS_KEY_ID** - Access key ID of the AWS user
-**AWS_SECRET_ACCESS_KEY** - Secret Access key ID of the AWS user
-**TESTING_PIPELINE_EXECUTION_ROLE** - ARN of the created pipeline role
-**TESTING_CLOUDFORMATION_EXECUTION_ROLE**  - ARN of the created cloudformation role
-**TESTING_ARTIFACTS_BUCKET** - name of testing bucket
-**PROD_PIPELINE_EXECUTION_ROLE** - ARN of the created pipeline role
+**AWS_ACCESS_KEY_ID** - Access key ID of the AWS user.
+**AWS_SECRET_ACCESS_KEY** - Secret Access key ID of the AWS user.
+**TESTING_PIPELINE_EXECUTION_ROLE** - ARN of the created pipeline role.
+**TESTING_CLOUDFORMATION_EXECUTION_ROLE**  - ARN of the created cloudformation role.
+**TESTING_ARTIFACTS_BUCKET** - name of testing bucket.
+**PROD_PIPELINE_EXECUTION_ROLE** - ARN of the created pipeline role.
 **PROD_CLOUDFORMATION_EXECUTION_ROLE** - ARN of the created cloudformation role
-**PROD_ARTIFACTS_BUCKET** - name of production bucket
+**PROD_ARTIFACTS_BUCKET** - name of production bucket.
 
 ## CI/CD pipeline
