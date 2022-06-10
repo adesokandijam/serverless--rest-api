@@ -26,8 +26,8 @@ Pass a request body in this format
     "department": "Elect",
     "faculty": "Technology",
     "CGPA": "3.69",
-    "grad_year": 2022,
-    "matric_no": "200326
+    "grad_year": "2022",
+    "matric_no": "200326"
 }
 * **Getting a student information** - API-ENDPOINT/get/3
 * **Getting all students information** - API-ENDPOINT/get/
