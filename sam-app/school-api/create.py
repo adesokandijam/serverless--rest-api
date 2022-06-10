@@ -9,30 +9,31 @@ table_name = os.environ['TABLE_NAME']
 client = boto3.client('dynamodb')
 
 def lambda_handler(event, context):
+    body = json.load(event['body'])
     try: 
         data = client.put_item(
             TableName = table_name,
             Item={
                 'id': {
-                'N': event['queryStringParameters']['id'] 
+                'N': body['id'] 
                 },
                 "name": {
-                    'S': event['queryStringParameters']['name'] 
+                    'S': body['name'] 
                 },
                 'matric_no': {
-                    'S': event['queryStringParameters']['matric_no'] 
+                    'S': body['matric_no'] 
                 },
                 'department': {
-                    'S': event['queryStringParameters']['department'] 
+                    'S': body['department'] 
                 },
                 'faculty': {
-                    'S': event['queryStringParameters']['faculty'] 
+                    'S': body['faculty'] 
                 },
                 'CGPA': {
-                    'S': event['queryStringParameters']['CGPA'] 
+                    'S': body['CGPA'] 
                 },
                 'year_of_grad': {
-                    'S': event['queryStringParameters']['grad_year'] 
+                    'S': body['grad_year'] 
                 }
             }
         )

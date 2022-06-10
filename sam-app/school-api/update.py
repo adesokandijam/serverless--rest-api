@@ -5,6 +5,7 @@ import os
 table_name = os.environ['TABLE_NAME']
 client = boto3.client('dynamodb')
 def lambda_handler(event, context):
+  body = json.load(event['body'])
   try:
     data = client.update_item(
       TableName=table_name,
@@ -15,7 +16,7 @@ def lambda_handler(event, context):
       },
       UpdateExpression="set department = :value",
       ExpressionAttributeValues={
-        ":value": {'S': event['queryStringParameters']['department']}
+        ":value": {'S': body['department']}
       },
       ReturnValues= "UPDATED_NEW"
     )
