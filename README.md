@@ -22,7 +22,7 @@ Also create a role for the deployment of the CloudFormation Template which the S
 Pass a request body in this format
 {
     "name": "Abdulmajid",
-    "id" : 4,
+    "id" : "4",
     "department": "Elect",
     "faculty": "Technology",
     "CGPA": "3.69",
