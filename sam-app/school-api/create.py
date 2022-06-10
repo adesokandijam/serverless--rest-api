@@ -47,7 +47,7 @@ def lambda_handler(event, context):
         },
         }
 
-    except ClientError as e:
+    except NameError as e:
         logger.error(e.response['Error']['Message'])
         raise
     else:
